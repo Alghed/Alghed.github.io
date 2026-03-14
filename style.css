@@ -95,7 +95,7 @@ html, body {
   box-shadow: 5px 5px 6px #dadada,
                -5px -5px 6px #f6f6f6;
   transition: 0.4s;
-  margin: 20px auto; /* Add this to center the card horizontally */
+  margin: 30px auto; /* Add this to center the card horizontally */
 }
 
 .button-container {
