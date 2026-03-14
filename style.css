@@ -1,15 +1,49 @@
-.html, body {
+html, body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f4f4;
   color: #333333;
-  display: grid;
-  place-items: center; /* Centers both horizontally and vertically */
-  height: 100px;
+  width: 100%; /* Ensure full width */
+  min-height: 100vh; /* Keep full height but allow content to flow */
 }
 
-/* From Uiverse.io by iZOXVL */ 
+.banner {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Add a background color to the top navigation */
+.topnav {
+  background-color: #333; /* Dark background color */
+  overflow: hidden; /* Clear floats */
+  width: 100%; /* Full width */
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left; /* Float links horizontally */
+  color: #f2f2f2; /* Light text color */
+  text-align: center; /* Center the text */
+  padding: 14px 16px; /* Add some padding */
+  text-decoration: none; /* Remove underlines from links */
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd; /* Lighter background on hover */
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D; /* Distinct color for the active page */
+  color: white;
+}
+
+
+/* Button From Uiverse.io by iZOXVL */ 
 .boton-elegante {
   padding: 15px 30px;
   border: 2px solid #2c2c2c;
@@ -23,6 +57,7 @@
   position: relative;
   overflow: hidden;
   font-weight: bold;
+  margin: 10px auto; /* Add this to center the card horizontally */
 }
 
 .boton-elegante::after {
@@ -60,14 +95,20 @@
   box-shadow: 5px 5px 6px #dadada,
                -5px -5px 6px #f6f6f6;
   transition: 0.4s;
+  margin: 20px auto; /* Add this to center the card horizontally */
+}
+
+.button-container {
+  text-align: center; /* Center the button */
+  margin-top: 20px; /* Add some space above the button */
 }
 
 .card:hover {
-  translate: 0 -10px;
+  translate: 0 -20px;
 }
 
 .card-title {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 600;
   color: #2e54a7;
   margin: 15px 0 0 10px;
