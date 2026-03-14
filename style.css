@@ -85,6 +85,62 @@ html, body {
   background: #292929;
 }
 
+/* Add this to your existing style.css file */
+
+/* Grid layout for cards */
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Desktop: 3 cards per row (screens wider than 992px) */
+@media screen and (min-width: 993px) {
+  body {
+    justify-content: flex-start; /* Align cards to the start */
+    max-width: 1200px; /* Optional: limit maximum width */
+    margin: 0 auto; /* Center the entire grid */
+  }
+  
+  .card {
+    flex: 0 1 calc(33.333% - 20px); /* 3 cards per row accounting for gap */
+    min-width: 280px; /* Prevent cards from getting too small */
+    max-width: 350px; /* Keep cards from getting too large */
+  }
+}
+
+/* Tablet: 2 cards per row (screens between 577px and 992px) */
+@media screen and (min-width: 577px) and (max-width: 992px) {
+  body {
+    justify-content: center;
+  }
+  
+  .card {
+    flex: 0 1 calc(50% - 20px); /* 2 cards per row */
+    min-width: 280px;
+    max-width: 350px;
+  }
+}
+
+/* Mobile: 1 card per row (screens up to 576px) */
+@media screen and (max-width: 576px) {
+  body {
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .card {
+    flex: 0 1 100%; /* Full width */
+    max-width: 350px; /* Keep cards at a reasonable size */
+    margin: 0 auto; /* Center the card */
+  }
+}
+
+/* Keep all your existing styles below */
+
 /* From Uiverse.io by Sashank02 */ 
 .card {
   padding: 20px;
@@ -95,7 +151,8 @@ html, body {
   box-shadow: 5px 5px 6px #dadada,
                -5px -5px 6px #f6f6f6;
   transition: 0.4s;
-  margin: 30px auto; /* Add this to center the card horizontally */
+  margin: 0; /* Remove auto margins since we're using flexbox gap */
+  flex: 0 1 auto; /* Reset flex properties */
 }
 
 .button-container {
