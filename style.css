@@ -120,14 +120,17 @@ html, body {
   border-radius: 15px;
   box-shadow: inset 8px 8px 10px #c3c3c3,
             inset -8px -8px 10px #cfcfcf;
+  overflow: hidden; /* THIS IS KEY - ensures the image respects the border radius */
+  -webkit-mask-image: -webkit-radial-gradient(white, black); /* Fix for Safari mobile */
+  mask-image: radial-gradient(white, black); /* Fix for mobile browsers */
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* This makes the image cover the area nicely */
-  display: block; /* Remove any extra spacing */
-  border-radius: 15px; /* Match the container's border radius */
+  object-fit: cover;
+  display: block;
+  /* Remove border-radius from here - let the container handle it */
 }
 
 .card-body {
