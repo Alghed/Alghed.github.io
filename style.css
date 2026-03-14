@@ -120,9 +120,13 @@ html, body {
   border-radius: 15px;
   box-shadow: inset 8px 8px 10px #c3c3c3,
             inset -8px -8px 10px #cfcfcf;
-  overflow: hidden; /* THIS IS KEY - ensures the image respects the border radius */
-  -webkit-mask-image: -webkit-radial-gradient(white, black); /* Fix for Safari mobile */
-  mask-image: radial-gradient(white, black); /* Fix for mobile browsers */
+  overflow: hidden;
+  position: relative; /* Helps with rendering */
+  /* Comprehensive mobile fix */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
 }
 
 .card-image img {
@@ -130,7 +134,8 @@ html, body {
   height: 100%;
   object-fit: cover;
   display: block;
-  /* Remove border-radius from here - let the container handle it */
+  position: relative;
+  z-index: 1;
 }
 
 .card-body {
