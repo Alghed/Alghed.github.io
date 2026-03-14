@@ -122,6 +122,14 @@ html, body {
             inset -8px -8px 10px #cfcfcf;
 }
 
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes the image cover the area nicely */
+  display: block; /* Remove any extra spacing */
+  border-radius: 15px; /* Match the container's border radius */
+}
+
 .card-body {
   margin: 13px 0 0 10px;
   color: rgb(31, 31, 31);
